@@ -41,11 +41,12 @@ async function getTonnetServiceToken() {
 
 // route
 app.get('/tonnetServerSyn', async (req, res) => {
+  console.log(`${moment().format('YYYY-MM-DD HH:mm')}收到請求`);
+
   let token = null;
 
   try {
     token = await getTonnetServiceToken();
-    console.log(token);
   } catch (error) {
     console.log('getTonnetServiceToken() error:', error);
   }
