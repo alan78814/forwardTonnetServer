@@ -57,6 +57,11 @@ app.get('/tonnetServerSyn', async (req, res) => {
   };
 
   try {
+    console.log({
+      dev_type: dev_type,
+      dev_id: dev_id,
+    });
+
     await aClient({
       method: 'POST',
       url: `https://${host}:${port}/api/system/sync`,
